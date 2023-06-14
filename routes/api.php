@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TechnicalController;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
@@ -20,5 +21,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('register',[RegisterController::class, 'index']);
+Route::get('index',[RegisterController::class, 'index']);
+Route::get('show/{id}',[RegisterController::class, 'show']);
 Route::post('register',[RegisterController::class, 'register']);
+Route::delete('destroy/{id}',[RegisterController::class, 'destroy']);
+
+Route::post('technical',[TechnicalController::class, 'technicalRegister']);

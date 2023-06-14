@@ -6,12 +6,18 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Psy\Command\WhereamiCommand;
 
 class RegisterController extends Controller
 {
     public function index()
     {
         return Register::all();
+    }
+
+    public function show($id){
+        $user = Register::find($id);
+        return $user;
     }
 
     public function register(RegisterRequest $request)
@@ -25,4 +31,10 @@ class RegisterController extends Controller
         return response()->json([$register], 201);
         
     }
+
+    public function destroy($id){
+        $user = Register::find($id)->delete();
+        return (['msg'=>'Registro eliminado correctamente']);
+    }
+
 }
