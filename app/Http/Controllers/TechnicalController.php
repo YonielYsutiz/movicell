@@ -10,7 +10,12 @@ use Illuminate\Support\Str;
 class TechnicalController extends Controller
 {
     public function index(){
-        return Technical::all();
+        $technical = Technical::orderBy('id','desc');
+        return view('technical.index', compact('technical'));
+    }
+
+    public function create(){
+        return view('technical.create');
     }
 
     public function show($id){

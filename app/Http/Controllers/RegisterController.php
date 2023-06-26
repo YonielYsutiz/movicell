@@ -12,7 +12,12 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return Register::all();
+        $register = Register::orderBy('id','desc');
+        return view('register.index', compact('register'));
+    }
+
+    public function create(){
+        return view('register.create');
     }
 
     public function show($id){

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TechnicalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::get('technical',[TechnicalController::class,'index'])->name('technical.index');
+Route::get('register',[RegisterController::class,'index'])->name('register.index');
