@@ -21,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('index',[RegisterController::class, 'index']);
+// Route::get('index',[RegisterController::class, 'index']);
+Route::get('register',[RegisterController::class, 'registerAll']);
 Route::get('show/{id}',[RegisterController::class, 'show']);
 Route::post('register',[RegisterController::class, 'register']);
 Route::delete('destroy/{id}',[RegisterController::class, 'destroy']);

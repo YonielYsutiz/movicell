@@ -10,6 +10,11 @@ use Psy\Command\WhereamiCommand;
 
 class RegisterController extends Controller
 {
+    public function registerAll()
+    {
+        return Register::all();
+    }
+
     public function index()
     {
         $register = Register::orderBy('id','desc');
