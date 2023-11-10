@@ -22,9 +22,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Route::get('index',[RegisterController::class, 'index']);
-Route::get('register',[RegisterController::class, 'registerAll']);
-Route::get('show/{id}',[RegisterController::class, 'show']);
-Route::post('register',[RegisterController::class, 'register']);
-Route::delete('destroy/{id}',[RegisterController::class, 'destroy']);
+Route::get('register', [RegisterController::class, 'registerAll']);
+Route::get('show/{id}', [RegisterController::class, 'show']);
+Route::post('register', [RegisterController::class, 'register']);
+Route::delete('destroy/{id}', [RegisterController::class, 'destroy']);
 
-Route::post('technical',[TechnicalController::class, 'technicalRegister']);
+Route::get('technical', [TechnicalController::class, 'technicalAll']);
+Route::post('technical', [TechnicalController::class, 'technicalRegister']);

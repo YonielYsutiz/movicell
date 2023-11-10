@@ -17,15 +17,17 @@ class RegisterController extends Controller
 
     public function index()
     {
-        $register = Register::orderBy('id','desc');
+        $register = Register::orderBy('id', 'desc');
         return view('register.index', compact('register'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('register.create');
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $user = Register::find($id);
         return $user;
     }
@@ -39,12 +41,11 @@ class RegisterController extends Controller
         $register->password = Hash::make($request->input('password')); // Cifrar la contraseña con bcrypt
         $register->save();
         return response()->json([$register], 201);
-        
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $user = Register::find($id)->delete();
-        return (['msg'=>'Registro eliminado correctamente']);
+        return (['msg' => 'Registro eliminado correctamente']);
     }
-
 }

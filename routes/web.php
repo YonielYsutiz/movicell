@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('technical',[TechnicalController::class,'index'])->name('technical.index');
-Route::get('register',[RegisterController::class,'index'])->name('register.index');
+Route::get('technical', [TechnicalController::class, 'index'])->name('technical.index');
+Route::get('register', [RegisterController::class, 'index'])->name('register.index');

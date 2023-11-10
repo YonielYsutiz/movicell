@@ -19,10 +19,10 @@ class TechnicalRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'firts_name'=>'required',
+            'firts_name' => 'required',
             'last_name' => 'required',
             'email' => 'email|required|unique:technical,email',
             'strong_points' => 'nullable',
@@ -34,16 +34,17 @@ class TechnicalRequest extends FormRequest
         ];
     }
 
-    public function messages(){
+    public function messages()
+    {
         return [
-            'firts_name'=>'El nombre es requerido',
-            'last_name'=>'El apellido es requerido',
-            'email'=>'El email es requerido o neceqsita que ser un email valido y unico',
-            'type_document'=>'Es tipo de documentos es requerido',
-            'nro_document'=>'El numero de documentos es requerido',
-            'number_phone'=>'El numero de tlf es requerido',
-            'contract_start'=>'La fecha del contrato inicial es requerido',
-            'contract_end'=>'La fecha del contrato finalizado es requerido'
+            'firts_name' => 'El nombre es requerido',
+            'last_name' => 'El apellido es requerido',
+            'email' => 'El email es requerido o neceqsita que ser un email valido y unico',
+            'type_document' => 'Es tipo de documentos es requerido',
+            'nro_document' => 'El numero de documentos es requerido',
+            'number_phone' => 'El numero de tlf es requerido',
+            'contract_start' => 'La fecha del contrato inicial es requerido',
+            'contract_end' => 'La fecha del contrato finalizado es requerido'
         ];
     }
 }
